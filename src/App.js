@@ -90,6 +90,7 @@ function Toast({ toastId, msg, children, duration }) {
     e.addEventListener("animationend", doClearToast);
     return () => e.removeEventListener("animationend", doClearToast);
   }, [doClearToast]);
+
   return (
     <DisplayToast ref={displayRef} duration={duration}>
       <ToastContext.Provider value={{ clear: doClearToast, msg }}>
